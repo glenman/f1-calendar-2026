@@ -241,9 +241,49 @@
             margin-bottom: 5px;
         }
 
+        .race-type {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+
         .race-details {
             color: #aaa;
             font-size: 0.9em;
+        }
+        
+        .sessions-list {
+            margin-top: 10px;
+        }
+        
+        .session-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85em;
+        }
+        
+        .session-item:last-child {
+            border-bottom: none;
+        }
+        
+        .session-name {
+            color: #ccc;
+        }
+        
+        .session-time {
+            color: #ff6b6b;
+            font-family: monospace;
+        }
+        
+        .session-race {
+            color: #e10600;
+            font-weight: bold;
         }
 
         .footer {
@@ -337,6 +377,8 @@
                 <!-- 赛程将由JavaScript动态生成 -->
             </div>
         </div>
+        
+        <script src="races_data.js"></script>
 
         <footer class="footer">
             <p>数据来源: F1官方赛程 | 时区: 自动转换为北京时间 (UTC+8)</p>
@@ -392,18 +434,33 @@
 
         function renderRaces() {
             const grid = document.getElementById('raceGrid');
-            grid.innerHTML = f1Races2026.map(race => `
-                <div class="race-item">
-                    <span class="race-round">第${race.round}站</span>
-                    <div class="race-name">${race.name}</div>
-                    <div class="race-details">
-                        📍 ${race.location}<br>
-                        🌍 ${race.country}<br>
-                        📅 ${formatDate(race.date)}<br>
-                        ⏰ ${formatBeijingTime(race.beijingTime)} (北京时间)
+            grid.innerHTML = f1Races2026.map(race => {
+                const sessionsHtml = race.sessions.map(session => {
+                    const isRace = session.name.includes('正赛');
+                    const timeStr = session.time.replace('+1', ' <span style="font-size:0.8em">(次日)</span>');
+                    return `
+                        <div class="session-item">
+                            <span class="session-name ${isRace ? 'session-race' : ''}">${session.name}</span>
+                            <span class="session-time">${timeStr}</span>
+                        </div>
+                    `;
+                }).join('');
+                
+                return `
+                    <div class="race-item">
+                        <span class="race-round">第${race.round}站</span>
+                        <span class="race-type">${race.type}</span>
+                        <div class="race-name">${race.name}</div>
+                        <div class="race-details">
+                            📍 ${race.location}<br>
+                            🌍 ${race.country}
+                        </div>
+                        <div class="sessions-list">
+                            ${sessionsHtml}
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         function copyUrl(inputId, successId) {
