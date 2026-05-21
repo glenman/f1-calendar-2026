@@ -276,6 +276,14 @@ METHOD:PUBLISH
 X-WR-CALNAME:F1 2026赛季
 X-WR-TIMEZONE:Asia/Shanghai
 X-WR-CALDESC:2026年F1世界锦标赛赛程（北京时间）
+BEGIN:VTIMEZONE
+TZID:Asia/Shanghai
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+END:STANDARD
+END:VTIMEZONE
 """
 
     for race in races:
@@ -284,9 +292,9 @@ X-WR-CALDESC:2026年F1世界锦标赛赛程（北京时间）
         start_time = beijing_time
         end_time = start_time + timedelta(hours=2)  # 2小时比赛
 
-        # 格式化时间
-        start_str = start_time.strftime("%Y%m%dT%H%M%SZ")
-        end_str = end_time.strftime("%Y%m%dT%H%M%SZ")
+        # 格式化时间 - 使用北京时间，不添加Z后缀
+        start_str = start_time.strftime("%Y%m%dT%H%M%S")
+        end_str = end_time.strftime("%Y%m%dT%H%M%S")
         dtstamp = datetime.now(ZoneInfo("UTC")).strftime("%Y%m%dT%H%M%SZ")
 
         # 格式化当地时间显示
@@ -296,8 +304,8 @@ X-WR-CALDESC:2026年F1世界锦标赛赛程（北京时间）
         ics_content += f"""BEGIN:VEVENT
 UID:f1-2026-{race['round']}@calendar
 DTSTAMP:{dtstamp}
-DTSTART:{start_str}
-DTEND:{end_str}
+DTSTART;TZID=Asia/Shanghai:{start_str}
+DTEND;TZID=Asia/Shanghai:{end_str}
 SUMMARY:{race['name']} (第{race['round']}站)
 DESCRIPTION:2026年F1世界锦标赛 - {race['name']}\\n\\n📍 地点: {race['location']}\\n🏆 国家: {race['country']}\\n⏰ 当地时间: {local_time_display}\\n⏰ 北京时间: {beijing_time_display}
 LOCATION:{race['location']}, {race['city']}
