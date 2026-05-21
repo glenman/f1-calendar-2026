@@ -48,25 +48,25 @@
             margin-bottom: 30px;
         }
 
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #e10600, #ff3333);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(225, 6, 0, 0.3);
-        }
-
         .download-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 30px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #e10600, #ff3333);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(225, 6, 0, 0.3);
         }
 
         .download-btn:hover {
@@ -209,7 +209,7 @@
 
         .race-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 15px;
         }
 
@@ -353,10 +353,10 @@
             <div class="card">
                 <h3>📊 赛季信息</h3>
                 <ul>
-                    <li>🏁 24站比赛</li>
-                    <li>📅 2026年3月8日 - 12月6日</li>
+                    <li>🏁 22站比赛</li>
+                    <li>📅 2026年3月6日 - 12月6日</li>
                     <li>⏰ 已转换为北京时间</li>
-                    <li>🌍 遍布21个国家</li>
+                    <li>🌍 遍布18个国家</li>
                 </ul>
             </div>
 
@@ -378,8 +378,6 @@
             </div>
         </div>
         
-        <script src="races_data.js"></script>
-
         <footer class="footer">
             <p>数据来源: F1官方赛程 | 时区: 自动转换为北京时间 (UTC+8)</p>
             <p>注意: 标有"+1"的比赛为次日举行</p>
@@ -387,34 +385,9 @@
         </footer>
     </div>
 
-    <script>
-        const f1Races2026 = [
-            {round: 1, name: "澳大利亚大奖赛", location: "阿尔伯特公园赛道", city: "墨尔本", country: "澳大利亚", date: "2026-03-08", beijingTime: "12:00"},
-            {round: 2, name: "中国大奖赛", location: "上海国际赛车场", city: "上海", country: "中国", date: "2026-03-15", beijingTime: "15:00"},
-            {round: 3, name: "日本大奖赛", location: "铃鹿赛道", city: "铃鹿", country: "日本", date: "2026-03-29", beijingTime: "13:00"},
-            {round: 4, name: "巴林大奖赛", location: "萨基尔赛道", city: "萨基尔", country: "巴林", date: "2026-04-12", beijingTime: "23:00"},
-            {round: 5, name: "沙特阿拉伯大奖赛", location: "吉达滨海赛道", city: "吉达", country: "沙特阿拉伯", date: "2026-04-19", beijingTime: "01:00+1"},
-            {round: 6, name: "迈阿密大奖赛", location: "迈阿密国际赛道", city: "迈阿密", country: "美国", date: "2026-05-03", beijingTime: "04:00+1"},
-            {round: 7, name: "加拿大大奖赛", location: "吉尔斯·维伦纽夫赛道", city: "蒙特利尔", country: "加拿大", date: "2026-05-24", beijingTime: "04:00+1"},
-            {round: 8, name: "摩纳哥大奖赛", location: "蒙特卡洛赛道", city: "蒙特卡洛", country: "摩纳哥", date: "2026-06-07", beijingTime: "21:00"},
-            {round: 9, name: "西班牙大奖赛 (巴塞罗那)", location: "加泰罗尼亚赛道", city: "巴塞罗那", country: "西班牙", date: "2026-06-14", beijingTime: "21:00"},
-            {round: 10, name: "奥地利大奖赛", location: "红牛环赛道", city: "施皮尔贝格", country: "奥地利", date: "2026-06-28", beijingTime: "21:00"},
-            {round: 11, name: "英国大奖赛", location: "银石赛道", city: "银石", country: "英国", date: "2026-07-05", beijingTime: "22:00"},
-            {round: 12, name: "比利时大奖赛", location: "斯帕-弗朗科尔尚赛道", city: "斯帕", country: "比利时", date: "2026-07-19", beijingTime: "21:00"},
-            {round: 13, name: "匈牙利大奖赛", location: "匈格罗宁赛道", city: "布达佩斯", country: "匈牙利", date: "2026-07-26", beijingTime: "21:00"},
-            {round: 14, name: "荷兰大奖赛", location: "赞德福特赛道", city: "赞德福特", country: "荷兰", date: "2026-08-23", beijingTime: "21:00"},
-            {round: 15, name: "意大利大奖赛", location: "蒙扎国家赛道", city: "蒙扎", country: "意大利", date: "2026-09-06", beijingTime: "21:00"},
-            {round: 16, name: "西班牙大奖赛 (马德里)", location: "马德里街道赛道", city: "马德里", country: "西班牙", date: "2026-09-13", beijingTime: "21:00"},
-            {round: 17, name: "阿塞拜疆大奖赛", location: "巴库城市赛道", city: "巴库", country: "阿塞拜疆", date: "2026-09-26", beijingTime: "19:00"},
-            {round: 18, name: "新加坡大奖赛", location: "滨海湾街道赛道", city: "新加坡", country: "新加坡", date: "2026-10-11", beijingTime: "20:00"},
-            {round: 19, name: "美国大奖赛", location: "美洲赛道 (COTA)", city: "奥斯汀", country: "美国", date: "2026-10-25", beijingTime: "04:00+1"},
-            {round: 20, name: "墨西哥城大奖赛", location: "罗德里格斯兄弟赛道", city: "墨西哥城", country: "墨西哥", date: "2026-11-01", beijingTime: "04:00+1"},
-            {round: 21, name: "圣保罗大奖赛", location: "若泽·卡洛斯·帕塞赛道", city: "圣保罗", country: "巴西", date: "2026-11-08", beijingTime: "01:00+1"},
-            {round: 22, name: "拉斯维加斯大奖赛", location: "拉斯维加斯街道赛道", city: "拉斯维加斯", country: "美国", date: "2026-11-21", beijingTime: "12:00"},
-            {round: 23, name: "卡塔尔大奖赛", location: "卢赛尔国际赛道", city: "卢赛尔", country: "卡塔尔", date: "2026-11-29", beijingTime: "00:00+1"},
-            {round: 24, name: "阿布扎比大奖赛", location: "亚斯码头赛道", city: "阿布扎比", country: "阿联酋", date: "2026-12-06", beijingTime: "21:00"}
-        ];
+    <script src="races_data.js"></script>
 
+    <script>
         function formatDate(dateString) {
             const date = new Date(dateString);
             return date.toLocaleDateString('zh-CN', {
@@ -425,15 +398,13 @@
             });
         }
 
-        function formatBeijingTime(timeString) {
-            if (timeString.includes('+1')) {
-                return timeString.replace('+1', '') + ' (次日)';
-            }
-            return timeString;
-        }
-
         function renderRaces() {
             const grid = document.getElementById('raceGrid');
+            if (!grid || typeof f1Races2026 === 'undefined') {
+                console.error('Race grid or data not found');
+                return;
+            }
+            
             grid.innerHTML = f1Races2026.map(race => {
                 const sessionsHtml = race.sessions.map(session => {
                     const isRace = session.name.includes('正赛');
@@ -485,7 +456,15 @@
             });
         }
 
-        renderRaces();
+        // 等待数据加载完成后渲染
+        window.addEventListener('DOMContentLoaded', function() {
+            if (typeof f1Races2026 !== 'undefined') {
+                renderRaces();
+            } else {
+                // 如果数据还没加载，延迟1秒再试
+                setTimeout(renderRaces, 1000);
+            }
+        });
     </script>
 </body>
 </html>
