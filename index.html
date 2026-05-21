@@ -88,6 +88,17 @@
             margin-bottom: 20px;
         }
 
+        .subscribe-item {
+            margin-bottom: 25px;
+        }
+        
+        .subscribe-item label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
         .subscribe-url {
             display: flex;
             align-items: center;
@@ -266,11 +277,24 @@
 
         <div class="subscribe-section">
             <h3>🔗 订阅链接（适用于Outlook等应用）</h3>
-            <div class="subscribe-url">
-                <input type="text" id="subscribeUrl" value="https://glenman.github.io/f1-calendar-2026/f1_2026.ics" readonly>
-                <button class="copy-btn" onclick="copyUrl()">复制</button>
+            
+            <div class="subscribe-item">
+                <label>📅 仅正赛日历订阅链接：</label>
+                <div class="subscribe-url">
+                    <input type="text" id="subscribeUrlRace" value="https://glenman.github.io/f1-calendar-2026/f1_2026.ics" readonly>
+                    <button class="copy-btn" onclick="copyUrl('subscribeUrlRace', 'copySuccessRace')">复制</button>
+                </div>
+                <div class="copy-success" id="copySuccessRace">✅ 已复制到剪贴板！</div>
             </div>
-            <div class="copy-success" id="copySuccess">✅ 已复制到剪贴板！</div>
+            
+            <div class="subscribe-item">
+                <label>🏎️ 完整赛程订阅链接（含所有环节）：</label>
+                <div class="subscribe-url">
+                    <input type="text" id="subscribeUrlFull" value="https://glenman.github.io/f1-calendar-2026/f1_2026_full.ics" readonly>
+                    <button class="copy-btn" onclick="copyUrl('subscribeUrlFull', 'copySuccessFull')">复制</button>
+                </div>
+                <div class="copy-success" id="copySuccessFull">✅ 已复制到剪贴板！</div>
+            </div>
         </div>
 
         <div class="info-cards">
@@ -382,9 +406,9 @@
             `).join('');
         }
 
-        function copyUrl() {
-            const urlInput = document.getElementById('subscribeUrl');
-            const copySuccess = document.getElementById('copySuccess');
+        function copyUrl(inputId, successId) {
+            const urlInput = document.getElementById(inputId);
+            const copySuccess = document.getElementById(successId);
             
             urlInput.select();
             urlInput.setSelectionRange(0, 99999); // 移动端兼容
