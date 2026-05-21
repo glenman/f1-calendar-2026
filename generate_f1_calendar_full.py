@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
 生成2026 F1赛季完整日历文件（包含所有比赛环节）
+注意：输入的时间已经是北京时间，无需再转换
 """
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 # 2026 F1赛季完整赛程（22站，包含所有环节）
-# 时间已转换为北京时间
+# 时间已经是北京时间
 f1_races_2026 = [
     {
         "round": 1,
@@ -16,11 +17,11 @@ f1_races_2026 = [
         "country": "澳大利亚",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-03-06", "time": "09:30", "duration": 60, "timezone": "Australia/Melbourne"},
-            {"name": "二练", "date": "2026-03-06", "time": "13:00", "duration": 60, "timezone": "Australia/Melbourne"},
-            {"name": "三练", "date": "2026-03-07", "time": "09:30", "duration": 60, "timezone": "Australia/Melbourne"},
-            {"name": "排位赛", "date": "2026-03-07", "time": "13:00", "duration": 60, "timezone": "Australia/Melbourne"},
-            {"name": "正赛", "date": "2026-03-08", "time": "12:00", "duration": 120, "timezone": "Australia/Melbourne"}
+            {"name": "一练", "date": "2026-03-06", "time": "09:30", "duration": 60},
+            {"name": "二练", "date": "2026-03-06", "time": "13:00", "duration": 60},
+            {"name": "三练", "date": "2026-03-07", "time": "09:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-03-07", "time": "13:00", "duration": 60},
+            {"name": "正赛", "date": "2026-03-08", "time": "12:00", "duration": 120}
         ]
     },
     {
@@ -31,11 +32,11 @@ f1_races_2026 = [
         "country": "中国",
         "type": "冲刺赛周末",
         "sessions": [
-            {"name": "一练", "date": "2026-03-13", "time": "11:30", "duration": 60, "timezone": "Asia/Shanghai"},
-            {"name": "冲刺赛排位", "date": "2026-03-13", "time": "15:30", "duration": 44, "timezone": "Asia/Shanghai"},
-            {"name": "冲刺赛", "date": "2026-03-14", "time": "11:00", "duration": 60, "timezone": "Asia/Shanghai"},
-            {"name": "排位赛", "date": "2026-03-14", "time": "15:00", "duration": 60, "timezone": "Asia/Shanghai"},
-            {"name": "正赛", "date": "2026-03-15", "time": "15:00", "duration": 120, "timezone": "Asia/Shanghai"}
+            {"name": "一练", "date": "2026-03-13", "time": "11:30", "duration": 60},
+            {"name": "冲刺赛排位", "date": "2026-03-13", "time": "15:30", "duration": 44},
+            {"name": "冲刺赛", "date": "2026-03-14", "time": "11:00", "duration": 60},
+            {"name": "排位赛", "date": "2026-03-14", "time": "15:00", "duration": 60},
+            {"name": "正赛", "date": "2026-03-15", "time": "15:00", "duration": 120}
         ]
     },
     {
@@ -46,11 +47,11 @@ f1_races_2026 = [
         "country": "日本",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-03-27", "time": "10:30", "duration": 60, "timezone": "Asia/Tokyo"},
-            {"name": "二练", "date": "2026-03-27", "time": "14:00", "duration": 60, "timezone": "Asia/Tokyo"},
-            {"name": "三练", "date": "2026-03-28", "time": "10:30", "duration": 60, "timezone": "Asia/Tokyo"},
-            {"name": "排位赛", "date": "2026-03-28", "time": "14:00", "duration": 60, "timezone": "Asia/Tokyo"},
-            {"name": "正赛", "date": "2026-03-29", "time": "13:00", "duration": 120, "timezone": "Asia/Tokyo"}
+            {"name": "一练", "date": "2026-03-27", "time": "10:30", "duration": 60},
+            {"name": "二练", "date": "2026-03-27", "time": "14:00", "duration": 60},
+            {"name": "三练", "date": "2026-03-28", "time": "10:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-03-28", "time": "14:00", "duration": 60},
+            {"name": "正赛", "date": "2026-03-29", "time": "13:00", "duration": 120}
         ]
     },
     {
@@ -61,11 +62,11 @@ f1_races_2026 = [
         "country": "美国",
         "type": "冲刺赛周末",
         "sessions": [
-            {"name": "一练", "date": "2026-05-01", "time": "21:30", "duration": 90, "timezone": "America/New_York"},
-            {"name": "冲刺赛排位", "date": "2026-05-02", "time": "01:30", "duration": 44, "timezone": "America/New_York"},
-            {"name": "冲刺赛", "date": "2026-05-02", "time": "21:00", "duration": 60, "timezone": "America/New_York"},
-            {"name": "排位赛", "date": "2026-05-03", "time": "01:00", "duration": 60, "timezone": "America/New_York"},
-            {"name": "正赛", "date": "2026-05-03", "time": "22:00", "duration": 120, "timezone": "America/New_York"}
+            {"name": "一练", "date": "2026-05-01", "time": "21:30", "duration": 90},
+            {"name": "冲刺赛排位", "date": "2026-05-02", "time": "01:30", "duration": 44},
+            {"name": "冲刺赛", "date": "2026-05-02", "time": "21:00", "duration": 60},
+            {"name": "排位赛", "date": "2026-05-03", "time": "01:00", "duration": 60},
+            {"name": "正赛", "date": "2026-05-03", "time": "22:00", "duration": 120}
         ]
     },
     {
@@ -76,11 +77,11 @@ f1_races_2026 = [
         "country": "加拿大",
         "type": "冲刺赛周末",
         "sessions": [
-            {"name": "一练", "date": "2026-05-23", "time": "01:30", "duration": 60, "timezone": "America/Toronto"},
-            {"name": "冲刺赛排位", "date": "2026-05-23", "time": "05:30", "duration": 44, "timezone": "America/Toronto"},
-            {"name": "冲刺赛", "date": "2026-05-24", "time": "00:00", "duration": 60, "timezone": "America/Toronto"},
-            {"name": "排位赛", "date": "2026-05-24", "time": "04:00", "duration": 60, "timezone": "America/Toronto"},
-            {"name": "正赛", "date": "2026-05-25", "time": "04:00", "duration": 120, "timezone": "America/Toronto"}
+            {"name": "一练", "date": "2026-05-23", "time": "01:30", "duration": 60},
+            {"name": "冲刺赛排位", "date": "2026-05-23", "time": "05:30", "duration": 44},
+            {"name": "冲刺赛", "date": "2026-05-24", "time": "00:00", "duration": 60},
+            {"name": "排位赛", "date": "2026-05-24", "time": "04:00", "duration": 60},
+            {"name": "正赛", "date": "2026-05-25", "time": "04:00", "duration": 120}
         ]
     },
     {
@@ -91,11 +92,11 @@ f1_races_2026 = [
         "country": "摩纳哥",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-06-05", "time": "13:30", "duration": 60, "timezone": "Europe/Monaco"},
-            {"name": "二练", "date": "2026-06-05", "time": "17:00", "duration": 60, "timezone": "Europe/Monaco"},
-            {"name": "三练", "date": "2026-06-06", "time": "12:30", "duration": 60, "timezone": "Europe/Monaco"},
-            {"name": "排位赛", "date": "2026-06-06", "time": "16:00", "duration": 60, "timezone": "Europe/Monaco"},
-            {"name": "正赛", "date": "2026-06-07", "time": "21:00", "duration": 120, "timezone": "Europe/Monaco"}
+            {"name": "一练", "date": "2026-06-05", "time": "13:30", "duration": 60},
+            {"name": "二练", "date": "2026-06-05", "time": "17:00", "duration": 60},
+            {"name": "三练", "date": "2026-06-06", "time": "12:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-06-06", "time": "16:00", "duration": 60},
+            {"name": "正赛", "date": "2026-06-07", "time": "21:00", "duration": 120}
         ]
     },
     {
@@ -106,11 +107,11 @@ f1_races_2026 = [
         "country": "西班牙",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-06-12", "time": "13:30", "duration": 60, "timezone": "Europe/Madrid"},
-            {"name": "二练", "date": "2026-06-12", "time": "17:00", "duration": 60, "timezone": "Europe/Madrid"},
-            {"name": "三练", "date": "2026-06-13", "time": "12:30", "duration": 60, "timezone": "Europe/Madrid"},
-            {"name": "排位赛", "date": "2026-06-13", "time": "16:00", "duration": 60, "timezone": "Europe/Madrid"},
-            {"name": "正赛", "date": "2026-06-14", "time": "21:00", "duration": 120, "timezone": "Europe/Madrid"}
+            {"name": "一练", "date": "2026-06-12", "time": "13:30", "duration": 60},
+            {"name": "二练", "date": "2026-06-12", "time": "17:00", "duration": 60},
+            {"name": "三练", "date": "2026-06-13", "time": "12:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-06-13", "time": "16:00", "duration": 60},
+            {"name": "正赛", "date": "2026-06-14", "time": "21:00", "duration": 120}
         ]
     },
     {
@@ -121,11 +122,11 @@ f1_races_2026 = [
         "country": "奥地利",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-06-26", "time": "18:30", "duration": 60, "timezone": "Europe/Vienna"},
-            {"name": "二练", "date": "2026-06-26", "time": "22:00", "duration": 60, "timezone": "Europe/Vienna"},
-            {"name": "三练", "date": "2026-06-27", "time": "17:30", "duration": 60, "timezone": "Europe/Vienna"},
-            {"name": "排位赛", "date": "2026-06-27", "time": "21:00", "duration": 60, "timezone": "Europe/Vienna"},
-            {"name": "正赛", "date": "2026-06-28", "time": "21:00", "duration": 120, "timezone": "Europe/Vienna"}
+            {"name": "一练", "date": "2026-06-26", "time": "18:30", "duration": 60},
+            {"name": "二练", "date": "2026-06-26", "time": "22:00", "duration": 60},
+            {"name": "三练", "date": "2026-06-27", "time": "17:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-06-27", "time": "21:00", "duration": 60},
+            {"name": "正赛", "date": "2026-06-28", "time": "21:00", "duration": 120}
         ]
     },
     {
@@ -136,11 +137,11 @@ f1_races_2026 = [
         "country": "英国",
         "type": "冲刺赛周末",
         "sessions": [
-            {"name": "一练", "date": "2026-07-03", "time": "19:30", "duration": 60, "timezone": "Europe/London"},
-            {"name": "冲刺赛排位", "date": "2026-07-03", "time": "23:30", "duration": 44, "timezone": "Europe/London"},
-            {"name": "冲刺赛", "date": "2026-07-04", "time": "19:00", "duration": 60, "timezone": "Europe/London"},
-            {"name": "排位赛", "date": "2026-07-04", "time": "23:00", "duration": 60, "timezone": "Europe/London"},
-            {"name": "正赛", "date": "2026-07-05", "time": "22:00", "duration": 120, "timezone": "Europe/London"}
+            {"name": "一练", "date": "2026-07-03", "time": "19:30", "duration": 60},
+            {"name": "冲刺赛排位", "date": "2026-07-03", "time": "23:30", "duration": 44},
+            {"name": "冲刺赛", "date": "2026-07-04", "time": "19:00", "duration": 60},
+            {"name": "排位赛", "date": "2026-07-04", "time": "23:00", "duration": 60},
+            {"name": "正赛", "date": "2026-07-05", "time": "22:00", "duration": 120}
         ]
     },
     {
@@ -151,11 +152,11 @@ f1_races_2026 = [
         "country": "比利时",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-07-17", "time": "19:30", "duration": 60, "timezone": "Europe/Brussels"},
-            {"name": "二练", "date": "2026-07-17", "time": "23:00", "duration": 60, "timezone": "Europe/Brussels"},
-            {"name": "三练", "date": "2026-07-18", "time": "18:30", "duration": 60, "timezone": "Europe/Brussels"},
-            {"name": "排位赛", "date": "2026-07-18", "time": "22:00", "duration": 60, "timezone": "Europe/Brussels"},
-            {"name": "正赛", "date": "2026-07-19", "time": "21:00", "duration": 120, "timezone": "Europe/Brussels"}
+            {"name": "一练", "date": "2026-07-17", "time": "19:30", "duration": 60},
+            {"name": "二练", "date": "2026-07-17", "time": "23:00", "duration": 60},
+            {"name": "三练", "date": "2026-07-18", "time": "18:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-07-18", "time": "22:00", "duration": 60},
+            {"name": "正赛", "date": "2026-07-19", "time": "21:00", "duration": 120}
         ]
     },
     {
@@ -166,11 +167,11 @@ f1_races_2026 = [
         "country": "匈牙利",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-07-24", "time": "19:30", "duration": 60, "timezone": "Europe/Budapest"},
-            {"name": "二练", "date": "2026-07-24", "time": "23:00", "duration": 60, "timezone": "Europe/Budapest"},
-            {"name": "三练", "date": "2026-07-25", "time": "18:30", "duration": 60, "timezone": "Europe/Budapest"},
-            {"name": "排位赛", "date": "2026-07-25", "time": "22:00", "duration": 60, "timezone": "Europe/Budapest"},
-            {"name": "正赛", "date": "2026-07-26", "time": "21:00", "duration": 120, "timezone": "Europe/Budapest"}
+            {"name": "一练", "date": "2026-07-24", "time": "19:30", "duration": 60},
+            {"name": "二练", "date": "2026-07-24", "time": "23:00", "duration": 60},
+            {"name": "三练", "date": "2026-07-25", "time": "18:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-07-25", "time": "22:00", "duration": 60},
+            {"name": "正赛", "date": "2026-07-26", "time": "21:00", "duration": 120}
         ]
     },
     {
@@ -181,11 +182,11 @@ f1_races_2026 = [
         "country": "荷兰",
         "type": "冲刺赛周末",
         "sessions": [
-            {"name": "一练", "date": "2026-08-21", "time": "18:30", "duration": 60, "timezone": "Europe/Amsterdam"},
-            {"name": "冲刺赛排位", "date": "2026-08-21", "time": "22:30", "duration": 44, "timezone": "Europe/Amsterdam"},
-            {"name": "冲刺赛", "date": "2026-08-22", "time": "18:00", "duration": 60, "timezone": "Europe/Amsterdam"},
-            {"name": "排位赛", "date": "2026-08-22", "time": "22:00", "duration": 60, "timezone": "Europe/Amsterdam"},
-            {"name": "正赛", "date": "2026-08-23", "time": "21:00", "duration": 120, "timezone": "Europe/Amsterdam"}
+            {"name": "一练", "date": "2026-08-21", "time": "18:30", "duration": 60},
+            {"name": "冲刺赛排位", "date": "2026-08-21", "time": "22:30", "duration": 44},
+            {"name": "冲刺赛", "date": "2026-08-22", "time": "18:00", "duration": 60},
+            {"name": "排位赛", "date": "2026-08-22", "time": "22:00", "duration": 60},
+            {"name": "正赛", "date": "2026-08-23", "time": "21:00", "duration": 120}
         ]
     },
     {
@@ -196,11 +197,11 @@ f1_races_2026 = [
         "country": "意大利",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-09-04", "time": "19:30", "duration": 60, "timezone": "Europe/Rome"},
-            {"name": "二练", "date": "2026-09-04", "time": "23:00", "duration": 60, "timezone": "Europe/Rome"},
-            {"name": "三练", "date": "2026-09-05", "time": "18:30", "duration": 60, "timezone": "Europe/Rome"},
-            {"name": "排位赛", "date": "2026-09-05", "time": "22:00", "duration": 60, "timezone": "Europe/Rome"},
-            {"name": "正赛", "date": "2026-09-06", "time": "21:00", "duration": 120, "timezone": "Europe/Rome"}
+            {"name": "一练", "date": "2026-09-04", "time": "19:30", "duration": 60},
+            {"name": "二练", "date": "2026-09-04", "time": "23:00", "duration": 60},
+            {"name": "三练", "date": "2026-09-05", "time": "18:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-09-05", "time": "22:00", "duration": 60},
+            {"name": "正赛", "date": "2026-09-06", "time": "21:00", "duration": 120}
         ]
     },
     {
@@ -211,11 +212,11 @@ f1_races_2026 = [
         "country": "西班牙",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-09-11", "time": "19:30", "duration": 60, "timezone": "Europe/Madrid"},
-            {"name": "二练", "date": "2026-09-11", "time": "23:00", "duration": 60, "timezone": "Europe/Madrid"},
-            {"name": "三练", "date": "2026-09-12", "time": "18:30", "duration": 60, "timezone": "Europe/Madrid"},
-            {"name": "排位赛", "date": "2026-09-12", "time": "22:00", "duration": 60, "timezone": "Europe/Madrid"},
-            {"name": "正赛", "date": "2026-09-13", "time": "21:00", "duration": 120, "timezone": "Europe/Madrid"}
+            {"name": "一练", "date": "2026-09-11", "time": "19:30", "duration": 60},
+            {"name": "二练", "date": "2026-09-11", "time": "23:00", "duration": 60},
+            {"name": "三练", "date": "2026-09-12", "time": "18:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-09-12", "time": "22:00", "duration": 60},
+            {"name": "正赛", "date": "2026-09-13", "time": "21:00", "duration": 120}
         ]
     },
     {
@@ -226,11 +227,11 @@ f1_races_2026 = [
         "country": "阿塞拜疆",
         "type": "常规周末（周六正赛）",
         "sessions": [
-            {"name": "一练", "date": "2026-09-24", "time": "16:30", "duration": 60, "timezone": "Asia/Baku"},
-            {"name": "二练", "date": "2026-09-24", "time": "20:00", "duration": 60, "timezone": "Asia/Baku"},
-            {"name": "三练", "date": "2026-09-25", "time": "16:30", "duration": 60, "timezone": "Asia/Baku"},
-            {"name": "排位赛", "date": "2026-09-25", "time": "20:00", "duration": 60, "timezone": "Asia/Baku"},
-            {"name": "正赛", "date": "2026-09-26", "time": "19:00", "duration": 120, "timezone": "Asia/Baku"}
+            {"name": "一练", "date": "2026-09-24", "time": "16:30", "duration": 60},
+            {"name": "二练", "date": "2026-09-24", "time": "20:00", "duration": 60},
+            {"name": "三练", "date": "2026-09-25", "time": "16:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-09-25", "time": "20:00", "duration": 60},
+            {"name": "正赛", "date": "2026-09-26", "time": "19:00", "duration": 120}
         ]
     },
     {
@@ -241,11 +242,11 @@ f1_races_2026 = [
         "country": "新加坡",
         "type": "冲刺赛周末",
         "sessions": [
-            {"name": "一练", "date": "2026-10-09", "time": "17:30", "duration": 60, "timezone": "Asia/Singapore"},
-            {"name": "冲刺赛排位", "date": "2026-10-09", "time": "21:30", "duration": 44, "timezone": "Asia/Singapore"},
-            {"name": "冲刺赛", "date": "2026-10-10", "time": "17:00", "duration": 60, "timezone": "Asia/Singapore"},
-            {"name": "排位赛", "date": "2026-10-10", "time": "21:00", "duration": 60, "timezone": "Asia/Singapore"},
-            {"name": "正赛", "date": "2026-10-11", "time": "20:00", "duration": 120, "timezone": "Asia/Singapore"}
+            {"name": "一练", "date": "2026-10-09", "time": "17:30", "duration": 60},
+            {"name": "冲刺赛排位", "date": "2026-10-09", "time": "21:30", "duration": 44},
+            {"name": "冲刺赛", "date": "2026-10-10", "time": "17:00", "duration": 60},
+            {"name": "排位赛", "date": "2026-10-10", "time": "21:00", "duration": 60},
+            {"name": "正赛", "date": "2026-10-11", "time": "20:00", "duration": 120}
         ]
     },
     {
@@ -256,11 +257,11 @@ f1_races_2026 = [
         "country": "美国",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-10-24", "time": "01:30", "duration": 60, "timezone": "America/Chicago"},
-            {"name": "二练", "date": "2026-10-24", "time": "05:00", "duration": 60, "timezone": "America/Chicago"},
-            {"name": "三练", "date": "2026-10-25", "time": "00:30", "duration": 60, "timezone": "America/Chicago"},
-            {"name": "排位赛", "date": "2026-10-25", "time": "04:00", "duration": 60, "timezone": "America/Chicago"},
-            {"name": "正赛", "date": "2026-10-26", "time": "03:00", "duration": 120, "timezone": "America/Chicago"}
+            {"name": "一练", "date": "2026-10-24", "time": "01:30", "duration": 60},
+            {"name": "二练", "date": "2026-10-24", "time": "05:00", "duration": 60},
+            {"name": "三练", "date": "2026-10-25", "time": "00:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-10-25", "time": "04:00", "duration": 60},
+            {"name": "正赛", "date": "2026-10-26", "time": "03:00", "duration": 120}
         ]
     },
     {
@@ -271,11 +272,11 @@ f1_races_2026 = [
         "country": "墨西哥",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-10-31", "time": "02:30", "duration": 60, "timezone": "America/Mexico_City"},
-            {"name": "二练", "date": "2026-10-31", "time": "06:00", "duration": 60, "timezone": "America/Mexico_City"},
-            {"name": "三练", "date": "2026-11-01", "time": "01:30", "duration": 60, "timezone": "America/Mexico_City"},
-            {"name": "排位赛", "date": "2026-11-01", "time": "05:00", "duration": 60, "timezone": "America/Mexico_City"},
-            {"name": "正赛", "date": "2026-11-02", "time": "04:00", "duration": 120, "timezone": "America/Mexico_City"}
+            {"name": "一练", "date": "2026-10-31", "time": "02:30", "duration": 60},
+            {"name": "二练", "date": "2026-10-31", "time": "06:00", "duration": 60},
+            {"name": "三练", "date": "2026-11-01", "time": "01:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-11-01", "time": "05:00", "duration": 60},
+            {"name": "正赛", "date": "2026-11-02", "time": "04:00", "duration": 120}
         ]
     },
     {
@@ -286,11 +287,11 @@ f1_races_2026 = [
         "country": "巴西",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-11-06", "time": "21:30", "duration": 60, "timezone": "America/Sao_Paulo"},
-            {"name": "二练", "date": "2026-11-07", "time": "01:00", "duration": 60, "timezone": "America/Sao_Paulo"},
-            {"name": "三练", "date": "2026-11-07", "time": "20:30", "duration": 60, "timezone": "America/Sao_Paulo"},
-            {"name": "排位赛", "date": "2026-11-08", "time": "00:00", "duration": 60, "timezone": "America/Sao_Paulo"},
-            {"name": "正赛", "date": "2026-11-09", "time": "01:00", "duration": 120, "timezone": "America/Sao_Paulo"}
+            {"name": "一练", "date": "2026-11-06", "time": "21:30", "duration": 60},
+            {"name": "二练", "date": "2026-11-07", "time": "01:00", "duration": 60},
+            {"name": "三练", "date": "2026-11-07", "time": "20:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-11-08", "time": "00:00", "duration": 60},
+            {"name": "正赛", "date": "2026-11-09", "time": "01:00", "duration": 120}
         ]
     },
     {
@@ -301,11 +302,11 @@ f1_races_2026 = [
         "country": "美国",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-11-20", "time": "10:30", "duration": 60, "timezone": "America/Los_Angeles"},
-            {"name": "二练", "date": "2026-11-20", "time": "14:00", "duration": 60, "timezone": "America/Los_Angeles"},
-            {"name": "三练", "date": "2026-11-21", "time": "09:30", "duration": 60, "timezone": "America/Los_Angeles"},
-            {"name": "排位赛", "date": "2026-11-21", "time": "13:00", "duration": 60, "timezone": "America/Los_Angeles"},
-            {"name": "正赛", "date": "2026-11-22", "time": "14:00", "duration": 120, "timezone": "America/Los_Angeles"}
+            {"name": "一练", "date": "2026-11-20", "time": "10:30", "duration": 60},
+            {"name": "二练", "date": "2026-11-20", "time": "14:00", "duration": 60},
+            {"name": "三练", "date": "2026-11-21", "time": "09:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-11-21", "time": "13:00", "duration": 60},
+            {"name": "正赛", "date": "2026-11-22", "time": "14:00", "duration": 120}
         ]
     },
     {
@@ -316,11 +317,11 @@ f1_races_2026 = [
         "country": "卡塔尔",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-11-27", "time": "19:30", "duration": 60, "timezone": "Asia/Qatar"},
-            {"name": "二练", "date": "2026-11-27", "time": "23:00", "duration": 60, "timezone": "Asia/Qatar"},
-            {"name": "三练", "date": "2026-11-28", "time": "19:30", "duration": 60, "timezone": "Asia/Qatar"},
-            {"name": "排位赛", "date": "2026-11-28", "time": "23:00", "duration": 60, "timezone": "Asia/Qatar"},
-            {"name": "正赛", "date": "2026-11-29", "time": "23:00", "duration": 120, "timezone": "Asia/Qatar"}
+            {"name": "一练", "date": "2026-11-27", "time": "19:30", "duration": 60},
+            {"name": "二练", "date": "2026-11-27", "time": "23:00", "duration": 60},
+            {"name": "三练", "date": "2026-11-28", "time": "19:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-11-28", "time": "23:00", "duration": 60},
+            {"name": "正赛", "date": "2026-11-29", "time": "23:00", "duration": 120}
         ]
     },
     {
@@ -331,25 +332,14 @@ f1_races_2026 = [
         "country": "阿联酋",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-12-04", "time": "17:30", "duration": 60, "timezone": "Asia/Dubai"},
-            {"name": "二练", "date": "2026-12-04", "time": "21:00", "duration": 60, "timezone": "Asia/Dubai"},
-            {"name": "三练", "date": "2026-12-05", "time": "17:30", "duration": 60, "timezone": "Asia/Dubai"},
-            {"name": "排位赛", "date": "2026-12-05", "time": "21:00", "duration": 60, "timezone": "Asia/Dubai"},
-            {"name": "正赛", "date": "2026-12-06", "time": "21:00", "duration": 120, "timezone": "Asia/Dubai"}
+            {"name": "一练", "date": "2026-12-04", "time": "17:30", "duration": 60},
+            {"name": "二练", "date": "2026-12-04", "time": "21:00", "duration": 60},
+            {"name": "三练", "date": "2026-12-05", "time": "17:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-12-05", "time": "21:00", "duration": 60},
+            {"name": "正赛", "date": "2026-12-06", "time": "21:00", "duration": 120}
         ]
     }
 ]
-
-def convert_to_beijing(date_str, time_str, timezone_str):
-    """将当地时间转换为北京时间"""
-    tz = ZoneInfo(timezone_str)
-    local_datetime = datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
-    local_datetime = local_datetime.replace(tzinfo=tz)
-    
-    beijing_tz = ZoneInfo("Asia/Shanghai")
-    beijing_datetime = local_datetime.astimezone(beijing_tz)
-    
-    return beijing_datetime
 
 def generate_ics(races):
     """生成ICS日历文件"""
@@ -376,12 +366,10 @@ END:VTIMEZONE
         for session in race["sessions"]:
             session_count += 1
             
-            # 转换为北京时间
-            beijing_time = convert_to_beijing(
-                session["date"], 
-                session["time"], 
-                session["timezone"]
-            )
+            # 解析北京时间（已经是北京时间，无需转换）
+            beijing_time = datetime.strptime(f"{session['date']} {session['time']}", "%Y-%m-%d %H:%M")
+            beijing_time = beijing_time.replace(tzinfo=ZoneInfo("Asia/Shanghai"))
+            
             end_time = beijing_time + timedelta(minutes=session["duration"])
 
             # 格式化时间
@@ -389,17 +377,13 @@ END:VTIMEZONE
             end_str = end_time.strftime("%Y%m%dT%H%M%S")
             dtstamp = datetime.now(ZoneInfo("UTC")).strftime("%Y%m%dT%H%M%SZ")
 
-            # 格式化当地时间显示
-            local_time_display = f"{session['time']} ({session['timezone']})"
-            beijing_time_display = beijing_time.strftime("%H:%M (北京时间)")
-
             ics_content += f"""BEGIN:VEVENT
 UID:f1-2026-r{race['round']}-s{session_count}@calendar
 DTSTAMP:{dtstamp}
 DTSTART;TZID=Asia/Shanghai:{start_str}
 DTEND;TZID=Asia/Shanghai:{end_str}
 SUMMARY:{race['name']} - {session['name']} (第{race['round']}站)
-DESCRIPTION:2026年F1世界锦标赛 - {race['name']}\\n\\n📍 地点: {race['location']}\\n🏆 国家: {race['country']}\\n🎯 周末类型: {race['type']}\\n⏰ 当地时间: {local_time_display}\\n⏰ 北京时间: {beijing_time_display}
+DESCRIPTION:2026年F1世界锦标赛 - {race['name']}\\n\\n📍 地点: {race['location']}\\n🏆 国家: {race['country']}\\n🎯 周末类型: {race['type']}\\n⏰ 北京时间: {session['time']}
 LOCATION:{race['location']}, {race['city']}
 STATUS:CONFIRMED
 TRANSP:OPAQUE
@@ -432,3 +416,9 @@ def save_ics(races, filename="f1_2026_full.ics"):
 if __name__ == "__main__":
     print("🏎️  生成2026 F1赛季完整日历...")
     ics_content = save_ics(f1_races_2026)
+    
+    # 显示几个示例时间
+    print("\n📋 时间示例:")
+    for race in f1_races_2026[:3]:
+        for session in race["sessions"][-1:]:  # 只显示正赛
+            print(f"   {race['name']} - {session['name']}: {session['date']} {session['time']}")
