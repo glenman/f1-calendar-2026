@@ -66,6 +66,76 @@
             box-shadow: 0 15px 40px rgba(225, 6, 0, 0.4);
         }
 
+        .subscribe-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .subscribe-section h3 {
+            color: #e10600;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-url {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .subscribe-url input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+
+        .subscribe-url input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .copy-btn {
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #e10600, #ff3333);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(225, 6, 0, 0.3);
+        }
+
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+
+        .copy-success {
+            color: #4CAF50;
+            font-size: 0.9em;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .copy-success.show {
+            opacity: 1;
+        }
+
         .info-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -183,6 +253,15 @@
             <a href="f1_2026.ics" class="download-btn" download="f1_2026.ics">📥 下载ICS日历文件</a>
         </header>
 
+        <div class="subscribe-section">
+            <h3>🔗 订阅链接（适用于Outlook等应用）</h3>
+            <div class="subscribe-url">
+                <input type="text" id="subscribeUrl" value="https://glenman.github.io/f1-calendar-2026/f1_2026.ics" readonly>
+                <button class="copy-btn" onclick="copyUrl()">复制</button>
+            </div>
+            <div class="copy-success" id="copySuccess">✅ 已复制到剪贴板！</div>
+        </div>
+
         <div class="info-cards">
             <div class="card">
                 <h3>📱 支持的应用</h3>
@@ -290,6 +369,28 @@
                     </div>
                 </div>
             `).join('');
+        }
+
+        function copyUrl() {
+            const urlInput = document.getElementById('subscribeUrl');
+            const copySuccess = document.getElementById('copySuccess');
+            
+            urlInput.select();
+            urlInput.setSelectionRange(0, 99999); // 移动端兼容
+            
+            navigator.clipboard.writeText(urlInput.value).then(() => {
+                copySuccess.classList.add('show');
+                setTimeout(() => {
+                    copySuccess.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                // 降级方案
+                document.execCommand('copy');
+                copySuccess.classList.add('show');
+                setTimeout(() => {
+                    copySuccess.classList.remove('show');
+                }, 2000);
+            });
         }
 
         renderRaces();
