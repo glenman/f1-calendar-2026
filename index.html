@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 F1赛季日历订阅</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #e10600, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #e10600, #ff3333);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(225, 6, 0, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(225, 6, 0, 0.4);
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #e10600;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card li:last-child {
+            border-bottom: none;
+        }
+
+        .race-schedule {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .race-schedule h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #e10600;
+        }
+
+        .race-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 15px;
+        }
+
+        .race-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #e10600;
+            transition: all 0.3s ease;
+        }
+
+        .race-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .race-round {
+            display: inline-block;
+            background: #e10600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .race-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .race-details {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .race-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏎️ 2026 F1赛季日历</h1>
+            <p class="subtitle">订阅到你的日历应用，不错过任何一场比赛</p>
+            <a href="f1_2026.ics" class="download-btn" download="f1_2026.ics">📥 下载ICS日历文件</a>
+        </header>
+
+        <div class="info-cards">
+            <div class="card">
+                <h3>📱 支持的应用</h3>
+                <ul>
+                    <li>✅ iOS 日历</li>
+                    <li>✅ Android 日历</li>
+                    <li>✅ Google Calendar</li>
+                    <li>✅ Outlook</li>
+                    <li>✅ macOS 日历</li>
+                    <li>✅ 其他支持ICS的应用</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>📊 赛季信息</h3>
+                <ul>
+                    <li>🏁 24站比赛</li>
+                    <li>📅 2026年3月14日 - 11月28日</li>
+                    <li>⏰ 北京时间 21:00 开赛</li>
+                    <li>🌍 遍布21个国家</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🔧 使用方法</h3>
+                <ul>
+                    <li>1. 点击下载按钮</li>
+                    <li>2. 在日历应用中选择"导入"</li>
+                    <li>3. 选择下载的ICS文件</li>
+                    <li>4. 完成！比赛自动同步</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="race-schedule">
+            <h2>📋 2026赛季完整赛程</h2>
+            <div class="race-grid" id="raceGrid">
+                <!-- 赛程将由JavaScript动态生成 -->
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>数据来源: F1官方赛程 | 时区: 亚洲/上海 (UTC+8)</p>
+            <p>如有更新，请重新下载最新版本的日历文件</p>
+        </footer>
+    </div>
+
+    <script>
+        const f1Races2026 = [
+            {round: 1, name: "巴林大奖赛", location: "巴林国际赛道", city: "萨基尔", country: "巴林", date: "2026-03-14"},
+            {round: 2, name: "沙特阿拉伯大奖赛", location: "吉达滨海赛道", city: "吉达", country: "沙特阿拉伯", date: "2026-03-21"},
+            {round: 3, name: "澳大利亚大奖赛", location: "阿尔伯特公园赛道", city: "墨尔本", country: "澳大利亚", date: "2026-04-04"},
+            {round: 4, name: "日本大奖赛", location: "铃鹿赛道", city: "铃鹿", country: "日本", date: "2026-04-18"},
+            {round: 5, name: "中国大奖赛", location: "上海国际赛车场", city: "上海", country: "中国", date: "2026-04-25"},
+            {round: 6, name: "迈阿密大奖赛", location: "迈阿密国际赛道", city: "迈阿密", country: "美国", date: "2026-05-02"},
+            {round: 7, name: "埃米利亚-罗马涅大奖赛", location: "伊莫拉赛道", city: "伊莫拉", country: "意大利", date: "2026-05-16"},
+            {round: 8, name: "摩纳哥大奖赛", location: "蒙特卡洛赛道", city: "蒙特卡洛", country: "摩纳哥", date: "2026-05-23"},
+            {round: 9, name: "加拿大大奖赛", location: "吉尔斯·维伦纽夫赛道", city: "蒙特利尔", country: "加拿大", date: "2026-06-06"},
+            {round: 10, name: "西班牙大奖赛", location: "加泰罗尼亚赛道", city: "巴塞罗那", country: "西班牙", date: "2026-06-20"},
+            {round: 11, name: "奥地利大奖赛", location: "红牛赛道", city: "施皮尔贝格", country: "奥地利", date: "2026-06-27"},
+            {round: 12, name: "英国大奖赛", location: "银石赛道", city: "银石", country: "英国", date: "2026-07-04"},
+            {round: 13, name: "匈牙利大奖赛", location: "亨格罗宁赛道", city: "布达佩斯", country: "匈牙利", date: "2026-07-25"},
+            {round: 14, name: "比利时大奖赛", location: "斯帕赛道", city: "斯帕", country: "比利时", date: "2026-08-01"},
+            {round: 15, name: "荷兰大奖赛", location: "赞德福特赛道", city: "赞德福特", country: "荷兰", date: "2026-08-22"},
+            {round: 16, name: "意大利大奖赛", location: "蒙扎赛道", city: "蒙扎", country: "意大利", date: "2026-08-29"},
+            {round: 17, name: "阿塞拜疆大奖赛", location: "巴库市街赛道", city: "巴库", country: "阿塞拜疆", date: "2026-09-12"},
+            {round: 18, name: "新加坡大奖赛", location: "滨海湾市街赛道", city: "新加坡", country: "新加坡", date: "2026-09-19"},
+            {round: 19, name: "美国大奖赛", location: "美洲赛道", city: "奥斯汀", country: "美国", date: "2026-10-03"},
+            {round: 20, name: "墨西哥城大奖赛", location: "罗德里格斯兄弟赛道", city: "墨西哥城", country: "墨西哥", date: "2026-10-17"},
+            {round: 21, name: "圣保罗大奖赛", location: "英特拉格斯赛道", city: "圣保罗", country: "巴西", date: "2026-10-24"},
+            {round: 22, name: "拉斯维加斯大奖赛", location: "拉斯维加斯大道赛道", city: "拉斯维加斯", country: "美国", date: "2026-11-07"},
+            {round: 23, name: "卡塔尔大奖赛", location: "卢赛尔国际赛道", city: "卢赛尔", country: "卡塔尔", date: "2026-11-21"},
+            {round: 24, name: "阿布扎比大奖赛", location: "亚斯码头赛道", city: "阿布扎比", country: "阿联酋", date: "2026-11-28"}
+        ];
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                weekday: 'long'
+            });
+        }
+
+        function renderRaces() {
+            const grid = document.getElementById('raceGrid');
+            grid.innerHTML = f1Races2026.map(race => `
+                <div class="race-item">
+                    <span class="race-round">第${race.round}站</span>
+                    <div class="race-name">${race.name}</div>
+                    <div class="race-details">
+                        📍 ${race.location}<br>
+                        🌍 ${race.country}<br>
+                        📅 ${formatDate(race.date)}<br>
+                        ⏰ 21:00 (北京时间)
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        renderRaces();
+    </script>
+</body>
+</html>
