@@ -61,6 +61,14 @@
             box-shadow: 0 10px 30px rgba(225, 6, 0, 0.3);
         }
 
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
         .download-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(225, 6, 0, 0.4);
@@ -250,7 +258,10 @@
         <header>
             <h1>🏎️ 2026 F1赛季日历</h1>
             <p class="subtitle">订阅到你的日历应用，不错过任何一场比赛</p>
-            <a href="f1_2026.ics" class="download-btn" download="f1_2026.ics">📥 下载ICS日历文件</a>
+            <div class="download-buttons">
+                <a href="f1_2026.ics" class="download-btn" download="f1_2026.ics">📥 仅正赛日历</a>
+                <a href="f1_2026_full.ics" class="download-btn" download="f1_2026_full.ics">📥 完整赛程（含练习/排位/冲刺赛）</a>
+            </div>
         </header>
 
         <div class="subscribe-section">
