@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test F1 Calendar</title>
+</head>
+<body>
+    <div id="raceGrid"></div>
+    <pre id="debug"></pre>
+    
+    <script src="races_data.js"></script>
+    <script>
+        document.getElementById('debug').textContent = 'Data loaded: ' + (typeof f1Races2026 !== 'undefined');
+        if (typeof f1Races2026 !== 'undefined') {
+            document.getElementById('debug').textContent += '\nTotal races: ' + f1Races2026.length;
+        }
+    </script>
+</body>
+</html>

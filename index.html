@@ -457,13 +457,16 @@
         }
 
         // 等待数据加载完成后渲染
-        window.addEventListener('DOMContentLoaded', function() {
-            if (typeof f1Races2026 !== 'undefined') {
-                renderRaces();
-            } else {
-                // 如果数据还没加载，延迟1秒再试
-                setTimeout(renderRaces, 1000);
-            }
+        window.addEventListener('load', function() {
+            // 给数据加载一些时间
+            setTimeout(function() {
+                if (typeof f1Races2026 !== 'undefined') {
+                    renderRaces();
+                } else {
+                    console.error('f1Races2026 data not loaded');
+                    document.getElementById('raceGrid').innerHTML = '<div style="color:red; text-align:center;">数据加载失败，请刷新页面重试</div>';
+                }
+            }, 500);
         });
     </script>
 </body>
