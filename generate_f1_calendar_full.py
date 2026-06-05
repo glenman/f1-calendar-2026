@@ -92,10 +92,10 @@ f1_races_2026 = [
         "country": "摩纳哥",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-06-05", "time": "13:30", "duration": 60},
-            {"name": "二练", "date": "2026-06-05", "time": "17:00", "duration": 60},
-            {"name": "三练", "date": "2026-06-06", "time": "12:30", "duration": 60},
-            {"name": "排位赛", "date": "2026-06-06", "time": "16:00", "duration": 60},
+            {"name": "一练", "date": "2026-06-05", "time": "19:30", "duration": 60},
+            {"name": "二练", "date": "2026-06-05", "time": "23:00", "duration": 60},
+            {"name": "三练", "date": "2026-06-06", "time": "18:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-06-06", "time": "22:00", "duration": 60},
             {"name": "正赛", "date": "2026-06-07", "time": "21:00", "duration": 120}
         ]
     },
@@ -107,10 +107,10 @@ f1_races_2026 = [
         "country": "西班牙",
         "type": "常规周末",
         "sessions": [
-            {"name": "一练", "date": "2026-06-12", "time": "13:30", "duration": 60},
-            {"name": "二练", "date": "2026-06-12", "time": "17:00", "duration": 60},
-            {"name": "三练", "date": "2026-06-13", "time": "12:30", "duration": 60},
-            {"name": "排位赛", "date": "2026-06-13", "time": "16:00", "duration": 60},
+            {"name": "一练", "date": "2026-06-12", "time": "19:30", "duration": 60},
+            {"name": "二练", "date": "2026-06-12", "time": "23:00", "duration": 60},
+            {"name": "三练", "date": "2026-06-13", "time": "18:30", "duration": 60},
+            {"name": "排位赛", "date": "2026-06-13", "time": "22:00", "duration": 60},
             {"name": "正赛", "date": "2026-06-14", "time": "21:00", "duration": 120}
         ]
     },
